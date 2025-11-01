@@ -124,7 +124,7 @@ User :- 	/user, /
 
 ## 🎨 Tailwind CSS (via CDN)
 
-In your public/index.html, add this line inside <head>:
+In your index.html, add this line inside <head>:
 
 <script src="https://cdn.tailwindcss.com"></script>
 
