@@ -150,7 +150,7 @@ No setup required — Tailwind works instantly.
 
 **Shiju A**
 💼 Full Stack Developer | JavaScript & Python Enthusiast
-📧 shijuavtm@gmail.com
+ 📧 shijuavtm@gmail.com
 
 
 
