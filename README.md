@@ -32,8 +32,8 @@ It includes **JWT authentication**, **MongoDB integration**, and a **React front
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/shijuvtm/Rolebase.git
-cd rolebase
+https://github.com/shijuvtm/RoleBase-Access.git
+cd RoleBase-Access
 ```
 ### 2️⃣ Setup Backend
 ```bash
