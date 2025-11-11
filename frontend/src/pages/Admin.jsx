@@ -1,8 +1,19 @@
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
 export default function Admin() {
+  const { user } = useContext(AuthContext);
+
   return (
-    <div className="text-center mt-20">
-      <h1 className="text-3xl font-bold text-red-600">Admin Dashboard</h1>
-      <p className="mt-3 text-white-700">You have full access to the system.</p>
+    <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
+
+      <h1 className="text-3xl font-bold text-red-600">
+        👋 Hi, {user?.user?.name || "Admin"}
+      </h1>
+
+      <p className="text-gray-700 mt-2 text-lg">
+        Welcome back, you have admin privileges.
+      </p>
     </div>
   );
 }
