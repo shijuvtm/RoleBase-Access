@@ -10,17 +10,29 @@ export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post("/auth/login", { email, password });
-      login(res.data);
-      navigate("/");
-    } catch (err) {
-      setError("Login failed");
-    }
-  };
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post("/auth/login", {
+      email,
+      password,
+    });
 
+    login(res.data); 
+    const role = res.data.user.role;
+
+    // Redirect based on role
+    if (role === "Admin") {
+      navigate("/admin");
+    } else if (role === "Manager") {
+      navigate("/manager");
+    } else {
+      navigate("/user");
+    }
+  } catch (err) {
+    setError(err.response?.data?.message || "Login failed");
+  }
+};
   return (
     <div className="bg-white p-8 rounded-2xl shadow-lg w-80 mt-10">
       <h2 className="text-2xl font-bold text-center mb-4 text-blue-600">Login</h2>
