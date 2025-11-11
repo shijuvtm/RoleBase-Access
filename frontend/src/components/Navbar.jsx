@@ -7,12 +7,12 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-white shadow-md py-3 px-6 flex justify-between items-center mt-4 rounded-2xl">
-      
-      <h1 className="text-xl font-bold text-blue-600">
+      {/* App Name */}
+      <h1 className="text-xl font-bold text-blue-600 gap-3">
         <Link to="/">RoleBase</Link>
       </h1>
 
-      
+      {/* Links Section */}
       <div className="flex gap-4 items-center">
         <Link
           to="/"
@@ -21,7 +21,7 @@ export default function Navbar() {
           Home
         </Link>
 
-        
+        {/* Role-based links */}
         {user && user.user.role === "Admin" && (
           <Link
             to="/admin"
@@ -49,7 +49,7 @@ export default function Navbar() {
           </Link>
         )}
 
-        {/* Auth buttons */}
+        {/* Auth Section */}
         {!user ? (
           <>
             <Link
@@ -67,12 +67,14 @@ export default function Navbar() {
             </Link>
           </>
         ) : (
-          <button
-            onClick={logout}
-            className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
-          >
-            Logout
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={logout}
+              className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
+            >
+              Logout
+            </button>
+          </div>
         )}
       </div>
     </nav>
